@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h3>Book Store App</h3>
+    <ul class="nav nav-pills">
+        <li><a href="/home">List All Books</a></li>
+        <li class="active"><a href="/create">Create a Book</a></li>
+        <li><a href="/delete">Delete a Book</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</div>
+
+<div class="container">
+    
+    <%if(error == true) {%>
+        <br>
+        <div class="alert alert-danger">
+            <strong>Error!</strong> Book ID already exists.
+        </div>
+    <%}%>
+  <h2>Create a Book</h2>
+  <form action="http://127.0.0.1:3000/create" method="post" id="Create">
+    <label for="bookId">Book ID:</label>
+    <div class="form-group">
+        <input type="number" class="form-control" name="BookID" placeholder="Enter Book Id" required>
+    </div>
+    <label for="title">Title:</label>
+    <div class="form-group">
+        <input type="text" class="form-control" name="Title" placeholder="Enter Title" required>
+    </div>
+    <label for="author">Author:</label>
+    <div class="form-group">
+        <input type="text" class="form-control" name="Author" placeholder="Enter Author" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>        
+</form>      
+</div>
+
+</body>
+</html>
